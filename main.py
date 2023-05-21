@@ -41,10 +41,7 @@ class TextInputBox(pygame.sprite.Sprite):
                     self.text += event.unicode
                 self.render_text()
 
-
-
 pygame.init()
-
 
 font = pygame.font.SysFont(None, 100)
 text_input_box = TextInputBox(100, 50, 300, font)
@@ -99,8 +96,7 @@ while run:
             group.update(event_list)
             group.draw(window)
             window.blit(font.render("Name: ", True, WHITE), (10, 50))
-            window.blit(font.render("Press enter to play", True, WHITE), (10, 200))  
-            window.blit(font.render("Press enter to play                      Go, go, run!", True, WHITE), (250, 200))
+            window.blit(font.render("Press enter to play  Go, go, run!", True, WHITE), (100, 200))
         if keys[pygame.K_RETURN]:
             print(text_input_box.text)
             name.append(text_input_box.text)
@@ -177,6 +173,5 @@ while run:
         window.fill(GRAY)
         window.blit(font1.render("GAME OVER!", True, WHITE), (20, 200))
     pygame.display.update()
-    pygame.display.flip()
 
     clock.tick(FPS)
